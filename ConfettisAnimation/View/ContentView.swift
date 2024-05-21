@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showConfetti:Bool = false
+    @State private var isRunning:Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            TimerAnim(confettiStart: $showConfetti)
+            ConfettiView(show: $showConfetti)
+                .edgesIgnoringSafeArea(.all)
         }
-        .padding()
+        .onChange(of: showConfetti) {
+            if showConfetti == true {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                    showConfetti = false
+                    isRunning = true
+                }
+            }
+        }
+        .fullScreenCover(isPresented: $isRunning) {
+            LastView()
+        }
+       
     }
 }
-
 #Preview {
     ContentView()
 }

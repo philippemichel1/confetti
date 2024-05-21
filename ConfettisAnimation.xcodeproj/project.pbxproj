@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370C61052BFD047D00490708 /* LastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C61042BFD047D00490708 /* LastView.swift */; };
 		37DD992A2BFBBC9D0024BDD4 /* ConfettisAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD99292BFBBC9D0024BDD4 /* ConfettisAnimationApp.swift */; };
 		37DD992C2BFBBC9D0024BDD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD992B2BFBBC9D0024BDD4 /* ContentView.swift */; };
 		37DD992E2BFBBC9F0024BDD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37DD992D2BFBBC9F0024BDD4 /* Assets.xcassets */; };
 		37DD99312BFBBC9F0024BDD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37DD99302BFBBC9F0024BDD4 /* Preview Assets.xcassets */; };
+		37DD993A2BFBBE120024BDD4 /* Conffeti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD99392BFBBE120024BDD4 /* Conffeti.swift */; };
+		37DD993C2BFBBFFA0024BDD4 /* Launcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD993B2BFBBFFA0024BDD4 /* Launcher.swift */; };
+		37DD993E2BFBC1010024BDD4 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD993D2BFBC1010024BDD4 /* ConfettiView.swift */; };
+		37DD99402BFBDBED0024BDD4 /* TimerAnim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD993F2BFBDBED0024BDD4 /* TimerAnim.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370C61042BFD047D00490708 /* LastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastView.swift; sourceTree = "<group>"; };
 		37DD99262BFBBC9D0024BDD4 /* ConfettisAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConfettisAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DD99292BFBBC9D0024BDD4 /* ConfettisAnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettisAnimationApp.swift; sourceTree = "<group>"; };
 		37DD992B2BFBBC9D0024BDD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37DD992D2BFBBC9F0024BDD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37DD99302BFBBC9F0024BDD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		37DD99392BFBBE120024BDD4 /* Conffeti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conffeti.swift; sourceTree = "<group>"; };
+		37DD993B2BFBBFFA0024BDD4 /* Launcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launcher.swift; sourceTree = "<group>"; };
+		37DD993D2BFBC1010024BDD4 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		37DD993F2BFBDBED0024BDD4 /* TimerAnim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAnim.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				37DD99292BFBBC9D0024BDD4 /* ConfettisAnimationApp.swift */,
-				37DD992B2BFBBC9D0024BDD4 /* ContentView.swift */,
+				37DD99382BFBBDD20024BDD4 /* ViewModel */,
+				37DD99372BFBBD120024BDD4 /* View */,
 				37DD992D2BFBBC9F0024BDD4 /* Assets.xcassets */,
 				37DD992F2BFBBC9F0024BDD4 /* Preview Content */,
 			);
@@ -65,6 +76,26 @@
 				37DD99302BFBBC9F0024BDD4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		37DD99372BFBBD120024BDD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37DD992B2BFBBC9D0024BDD4 /* ContentView.swift */,
+				370C61042BFD047D00490708 /* LastView.swift */,
+				37DD993F2BFBDBED0024BDD4 /* TimerAnim.swift */,
+				37DD993D2BFBC1010024BDD4 /* ConfettiView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		37DD99382BFBBDD20024BDD4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37DD99392BFBBE120024BDD4 /* Conffeti.swift */,
+				37DD993B2BFBBFFA0024BDD4 /* Launcher.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +170,11 @@
 			files = (
 				37DD992C2BFBBC9D0024BDD4 /* ContentView.swift in Sources */,
 				37DD992A2BFBBC9D0024BDD4 /* ConfettisAnimationApp.swift in Sources */,
+				370C61052BFD047D00490708 /* LastView.swift in Sources */,
+				37DD99402BFBDBED0024BDD4 /* TimerAnim.swift in Sources */,
+				37DD993A2BFBBE120024BDD4 /* Conffeti.swift in Sources */,
+				37DD993E2BFBC1010024BDD4 /* ConfettiView.swift in Sources */,
+				37DD993C2BFBBFFA0024BDD4 /* Launcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +314,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,8 +342,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

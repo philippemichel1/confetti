@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-struct ConfettiView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct ConfettiView: UIViewRepresentable {
+    @Binding var show: Bool
+    
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView(frame: .zero)
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIView, context: Context) {
+        if show {
+            let lanceur = Launcher()
+            lanceur.setup(frame: uiView.frame)
+            uiView.layer.addSublayer(lanceur)
+            lanceur.lancerConfettis()
+        } else {
+            uiView.layer.sublayers?.removeAll(where: { $0 is Launcher })
+        }
     }
 }
 
 #Preview {
-    ConfettiView()
+    ConfettiView(show: .constant(true))
 }
