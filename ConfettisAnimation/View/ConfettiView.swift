@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// utilise comme passerelle pour des element UIKIT
 struct ConfettiView: UIViewRepresentable {
     @Binding var show: Bool
     

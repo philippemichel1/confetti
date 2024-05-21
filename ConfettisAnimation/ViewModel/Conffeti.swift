@@ -9,6 +9,7 @@ import SwiftUI
 class Confetti: CAEmitterCell {
     var images = [#imageLiteral(resourceName: "Triangle"), #imageLiteral(resourceName: "Circle"), #imageLiteral(resourceName: "Carre")]
     
+    // initialisation du constructeur
     override init() {
         super.init()
         setup()
@@ -18,10 +19,12 @@ class Confetti: CAEmitterCell {
         super.init(coder: aDecoder)
         setup()
     }
-    
+    //fonction de paramettre de confetti
     func setup() {
+        // affiche les formes aleatoirement à partir du tableau de forme image
         contents = images[Int.random(in: 0..<images.count)].cgImage
-        color = UIColor(red: floatAleatoire(), green: floatAleatoire(), blue: floatAleatoire(), alpha: 1).cgColor
+        // génére une couleur RGB pour chaque formes
+        color = UIColor(red: randomValueColor(), green: randomValueColor(), blue: randomValueColor(), alpha: 1).cgColor
         birthRate = 4
         lifetime = 10
         lifetimeRange = 3
@@ -36,7 +39,7 @@ class Confetti: CAEmitterCell {
     }
     
     // retourne des chiffres aléaloire pour les couleurs RGB
-    func floatAleatoire() -> CGFloat {
+    func randomValueColor() -> CGFloat {
          return CGFloat.random(in: 0...1)
     }
 }

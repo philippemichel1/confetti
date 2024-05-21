@@ -13,10 +13,13 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            // formulaire du timer
             TimerAnim(confettiStart: $showConfetti)
+            // formulaire 
             ConfettiView(show: $showConfetti)
                 .edgesIgnoringSafeArea(.all)
         }
+        // affiche le formulaire confetti et l'arrete et le formulaire lastView eb fonction des variable.
         .onChange(of: showConfetti) {
             if showConfetti == true {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
