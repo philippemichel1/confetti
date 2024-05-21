@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LastView: View {
+    // variable environnement pour ouvrir url
     @Environment(\.openURL) var openURL
     var body: some View {
         VStack {
