@@ -4,13 +4,12 @@
 //
 //  Created by Philippe MICHEL on 20/05/2024.
 //
-
 import SwiftUI
 
 struct TimerAnim: View {
     @State var width: CGFloat =  300
     @State var height:CGFloat = 300
-    @State private var initialCounter: Int = 10
+    @State private var initialCounter:Int = 10
     @State private var progressCover:Double = 100
     @State private var timer: Timer?
     @State private var sizeOfSegment:Double = 0
@@ -50,7 +49,6 @@ struct TimerAnim: View {
     
     // Fonction de compte à rebours
     func runningCount() {
-        
         if initialCounter > 0 {
             initialCounter -= 1
             progressCover -= sizeOfSegment
