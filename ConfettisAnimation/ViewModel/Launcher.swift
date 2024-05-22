@@ -19,20 +19,23 @@ class Launcher:CAEmitterLayer {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+    // définition de la position de départ
     func setup(frame: CGRect) {
+        // position
         emitterPosition = CGPoint(x: frame.width / 2, y: -10)
         emitterShape = .line
+        // définition de la taille
         emitterSize = CGSize(width: frame.width, height: 2)
     }
-    
-    func lancerConfettis() {
-        emitterCells = creerCells()
+    // lancer confetti
+    func throwConfetti() {
+        emitterCells = createcells()
     }
     
-    func creerCells() -> [Confetti] {
+    // return un tableau de confettis
+    func createcells() -> [Confetti] {
         var confettis = [Confetti]()
-        for _ in 0...31 {
+        for _ in 0...35 {
             confettis.append(Confetti())
         }
         return confettis

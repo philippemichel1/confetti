@@ -21,7 +21,7 @@ struct ConfettiView: UIViewRepresentable {
             let lanceur = Launcher()
             lanceur.setup(frame: uiView.frame)
             uiView.layer.addSublayer(lanceur)
-            lanceur.lancerConfettis()
+            lanceur.throwConfetti()
         } else {
             uiView.layer.sublayers?.removeAll(where: { $0 is Launcher })
         }
