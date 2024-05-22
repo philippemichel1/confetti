@@ -8,24 +8,34 @@
 import SwiftUI
 
 struct TimerAnim: View {
+    @State var width: CGFloat =  300
+    @State var height:CGFloat = 300
     @State private var initialNumber: Int = 10
+    @State private var progressCover:Double = 100
     @State private var timer: Timer?
+    @State private var segment:Double = 0
     @Binding var confettiStart:Bool
     
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.purple.opacity(0.70), lineWidth: 25)
+                .stroke(Color.gray.opacity(0.20), lineWidth: 25)
                 .shadow(color: .black.opacity(0.1), radius: 10, x: 10, y: 10)
-                .frame(width: 300, height: 300)
+                .frame(width: width, height: height)
                 .opacity(initialNumber > 0 ? 1 : 0)
-            
+            Circle()
+                .trim(from:0.0, to: 1 * progressCover / 100)
+                .stroke(Color.purple.opacity(0.70), lineWidth: 25)
+                .rotationEffect(.degrees(-90))
+                .frame(width: width, height: height)
+                .opacity(initialNumber > 0 ? 1 : 0)
             Text("\(initialNumber)")
                 .font(.system(size: 150))
                 .foregroundColor(.red)
                 .bold()
                 .opacity(initialNumber > 0 ? 1 : 0)
                 .onAppear {
+                    segment = Double(100 / initialNumber)
                     startTimer()
                 }
         }
@@ -40,8 +50,10 @@ struct TimerAnim: View {
     
     // Fonction de compte à rebours
     func runningCount() {
+        
         if initialNumber > 0 {
             initialNumber -= 1
+            progressCover -= segment
         } else {
             timer?.invalidate()
             timer = nil

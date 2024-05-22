@@ -19,7 +19,7 @@ struct ContentView: View {
             ConfettiView(show: $showConfetti)
                 .edgesIgnoringSafeArea(.all)
         }
-        // affiche le formulaire confetti et l'arrete et le formulaire lastView eb fonction des variable.
+        // affiche le formulaire confetti et l'arrete et le formulaire lastView en fonction des variables.
         .onChange(of: showConfetti) {
             if showConfetti == true {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
