@@ -10,10 +10,10 @@ import SwiftUI
 struct TimerAnim: View {
     @State var width: CGFloat =  300
     @State var height:CGFloat = 300
-    @State private var initialNumber: Int = 10
+    @State private var initialCounter: Int = 10
     @State private var progressCover:Double = 100
     @State private var timer: Timer?
-    @State private var segment:Double = 0
+    @State private var sizeOfSegment:Double = 0
     @Binding var confettiStart:Bool
     
     var body: some View {
@@ -22,20 +22,20 @@ struct TimerAnim: View {
                 .stroke(Color.gray.opacity(0.20), lineWidth: 25)
                 .shadow(color: .black.opacity(0.1), radius: 10, x: 10, y: 10)
                 .frame(width: width, height: height)
-                .opacity(initialNumber > 0 ? 1 : 0)
+                .opacity(initialCounter > 0 ? 1 : 0)
             Circle()
                 .trim(from:0.0, to: 1 * progressCover / 100)
                 .stroke(Color.purple.opacity(0.70), lineWidth: 25)
                 .rotationEffect(.degrees(-90))
                 .frame(width: width, height: height)
-                .opacity(initialNumber > 0 ? 1 : 0)
-            Text("\(initialNumber)")
+                .opacity(initialCounter > 0 ? 1 : 0)
+            Text("\(initialCounter)")
                 .font(.system(size: 150))
                 .foregroundColor(.red)
                 .bold()
-                .opacity(initialNumber > 0 ? 1 : 0)
+                .opacity(initialCounter > 0 ? 1 : 0)
                 .onAppear {
-                    segment = Double(100 / initialNumber)
+                    sizeOfSegment = Double(100 / initialCounter)
                     startTimer()
                 }
         }
@@ -51,9 +51,9 @@ struct TimerAnim: View {
     // Fonction de compte à rebours
     func runningCount() {
         
-        if initialNumber > 0 {
-            initialNumber -= 1
-            progressCover -= segment
+        if initialCounter > 0 {
+            initialCounter -= 1
+            progressCover -= sizeOfSegment
         } else {
             timer?.invalidate()
             timer = nil
